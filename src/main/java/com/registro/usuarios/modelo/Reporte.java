@@ -1,5 +1,9 @@
 package com.registro.usuarios.modelo;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -38,7 +43,21 @@ public class Reporte {
 	@Column(name = "name",length = 500)
 	private String name;
 	
+	@OneToMany(mappedBy = "reporte", cascade = CascadeType.ALL)
+	private Set<Seguimiento> seguimientos = new HashSet<>();
 	
+	
+
+	public Set<Seguimiento> getSeguimientos() {
+		return seguimientos;
+	}
+
+	public void setSeguimientos(Set<Seguimiento> seguimientos) {
+		this.seguimientos = seguimientos;
+		for (Seguimiento seguimiento : seguimientos) {
+			seguimiento.setReporte(this);
+		}
+	}
 
 	public Reporte(int id, Connectiontoken connectiontoken, String datecreate, String date, String state,
 			String description, String name) {

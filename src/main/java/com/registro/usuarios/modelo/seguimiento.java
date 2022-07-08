@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "estado")
-public class seguimiento {
+public class Seguimiento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -109,7 +109,7 @@ public class seguimiento {
 		this.filegenerate = filegenerate;
 	}
 
-	public seguimiento(int id, Reporte reporte, String dategenerate, String state, String result, String detalle,
+	public Seguimiento(int id, Reporte reporte, String dategenerate, String state, String result, String detalle,
 			String type, String filegenerate) {
 		super();
 		this.id = id;

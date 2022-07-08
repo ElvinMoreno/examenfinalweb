@@ -3,11 +3,11 @@ package com.registro.usuarios.repositorio;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.registro.usuarios.modelo.Revision;
+import com.registro.usuarios.modelo.Reporte;
 
 
 @Repository
-public interface RevisionRepositorio extends JpaRepository<Revision, Integer> {
+public interface ReporteRepositorio extends JpaRepository<Reporte, Integer> {
 
 	
 }

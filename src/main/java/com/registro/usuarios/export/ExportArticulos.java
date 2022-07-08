@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.registro.usuarios.modelo.Articulo;
+import com.registro.usuarios.modelo.Connectiontoken;
 
 
 
@@ -22,12 +22,12 @@ public class ExportArticulos {
 	private XSSFWorkbook libro;
 	private XSSFSheet hoja;
 
-	private List<Articulo> listaArticulos;
+	private List<Connectiontoken> lista;
 
-	public ExportArticulos(List<Articulo> listaArticulos) {
-		this.listaArticulos = listaArticulos;
+	public ExportArticulos(List<Connectiontoken> lista) {
+		this.lista = lista;
 		libro = new XSSFWorkbook();
-		hoja = libro.createSheet("articulo");
+		hoja = libro.createSheet("conexion");
 	}
 
 	private void escribirCabeceraDeTabla() {
@@ -96,69 +96,69 @@ public class ExportArticulos {
 		fuente.setFontHeight(14);
 		estilo.setFont(fuente);
 		
-		for(Articulo articulo : listaArticulos) {
+		for(Connectiontoken conexion : lista) {
 			Row fila = hoja.createRow(nueroFilas ++);
 			
-			Cell celda = fila.createCell(0);
-			celda.setCellValue(articulo.getId().toString());
-			hoja.autoSizeColumn(0);
-			celda.setCellStyle(estilo);
-		
-			celda = fila.createCell(1);
-			celda.setCellValue(articulo.getTitulo());
-			hoja.autoSizeColumn(1);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(2);
-			celda.setCellValue(articulo.getAutores());
-			hoja.autoSizeColumn(2);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(3);
-			celda.setCellValue(articulo.getCitacion());
-			hoja.autoSizeColumn(3);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(4);
-			celda.setCellValue(articulo.getPais().toString());
-			hoja.autoSizeColumn(4);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(5);
-			celda.setCellValue(articulo.getAnio());
-			hoja.autoSizeColumn(5);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(6);
-			celda.setCellValue(articulo.getPalabras_clave());
-			hoja.autoSizeColumn(6);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(7);
-			celda.setCellValue(articulo.getUrl());
-			hoja.autoSizeColumn(7);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(8);
-			celda.setCellValue(articulo.getResumen());
-			hoja.autoSizeColumn(8);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(9);
-			celda.setCellValue(articulo.getConclusiones());
-			hoja.autoSizeColumn(9);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(10);
-			celda.setCellValue(articulo.getNotas());
-			hoja.autoSizeColumn(10);
-			celda.setCellStyle(estilo);
-			
-			celda = fila.createCell(11);
-			celda.setCellValue(articulo.getUsuario().toString());
-			hoja.autoSizeColumn(11);
-			celda.setCellStyle(estilo);
-			
+//			Cell celda = fila.createCell(0);
+//			celda.setCellValue(articulo.getId().toString());
+//			hoja.autoSizeColumn(0);
+//			celda.setCellStyle(estilo);
+//		
+//			celda = fila.createCell(1);
+//			celda.setCellValue(articulo.getTitulo());
+//			hoja.autoSizeColumn(1);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(2);
+//			celda.setCellValue(articulo.getAutores());
+//			hoja.autoSizeColumn(2);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(3);
+//			celda.setCellValue(articulo.getCitacion());
+//			hoja.autoSizeColumn(3);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(4);
+//			celda.setCellValue(articulo.getPais().toString());
+//			hoja.autoSizeColumn(4);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(5);
+//			celda.setCellValue(articulo.getAnio());
+//			hoja.autoSizeColumn(5);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(6);
+//			celda.setCellValue(articulo.getPalabras_clave());
+//			hoja.autoSizeColumn(6);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(7);
+//			celda.setCellValue(articulo.getUrl());
+//			hoja.autoSizeColumn(7);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(8);
+//			celda.setCellValue(articulo.getResumen());
+//			hoja.autoSizeColumn(8);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(9);
+//			celda.setCellValue(articulo.getConclusiones());
+//			hoja.autoSizeColumn(9);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(10);
+//			celda.setCellValue(articulo.getNotas());
+//			hoja.autoSizeColumn(10);
+//			celda.setCellStyle(estilo);
+//			
+//			celda = fila.createCell(11);
+//			celda.setCellValue(articulo.getUsuario().toString());
+//			hoja.autoSizeColumn(11);
+//			celda.setCellStyle(estilo);
+//			
 
 		}
 	}
